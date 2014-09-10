@@ -428,6 +428,25 @@ other external sources being loaded.
 [1, 2, 3, 4, 5].duplicate();
 
 Array.prototype.duplicate = function() {
+  var arr = this.slice(0);
 
-};
+  arr.forEach(function(e) {
+    arr.push(e);
+  });
+
+  return arr;
+}
 ```
+
+Feel free to come up with a better way!
+
+## Why is it called a ternary expression? What does the word ternary indicate?
+
+A ternary expression uses a ternary operator. A ternary operator means that it
+takes three arguments (although in some language implementations this becomes a
+conditional expression).
+
+## What is `'use strict';`? What are the advantages and disadvantages for using
+it?
+
+[Lol Stack Overflow](http://stackoverflow.com/questions/1335851/what-does-use-strict-do-in-javascript-and-what-is-the-reasoning-behind-it)
