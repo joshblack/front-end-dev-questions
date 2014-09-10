@@ -1,8 +1,4 @@
-Hey, I know I'm not perfect. I've tried to write my own answers to each of these
-questions but I know some things will still remain uncertain. In that case, I
-try to include a couple great resources to learning the theory / motivation
-behind each of the questions to help all of us understand these questions
-better!
+I've tried to write my own answers to each of these questions but I know some things will still remain uncertain. In that case, I try to include a couple great resources to learning the theory / motivation behind each of the questions to help all of us understand these questions better!
 
 # JS Questions
 
@@ -103,7 +99,7 @@ And that's basically it! That's a brief review of event delegation.
 
 There are five ways the value of `this` gets set in JavaScript.
 
-1. Global
+### Global
 
 If you just call `this` in a JavaScript context it will refer to the global
 object. This will be `window` if you are working in the browser or `process` if
@@ -111,7 +107,7 @@ you are in node.
 
 **Note:** if you are using `'use strict';` mode then this will be `undefined`
 
-2. Function invocation
+### Function invocation
 
 When calling a function on an object, `this` is set to the object making the
 call. For example:
@@ -127,7 +123,7 @@ var foo = {
 foo.bar(); // "JS Rules!"
 ```
 
-3. Function Declaration
+### Function Declaration
 
 Pretty natural way of thinking about `this`. Say you have a function:
 
@@ -140,12 +136,12 @@ var foobar = new foo("bar");
 foobar.member; // "bar"
 ```
 
-4. Apply / call / bind
+### Apply / call / bind
 
 You can give a function its value of this by using the functions `apply`,
 `call`, or `bind`.
 
-5. Fat arrow
+### Fat arrow
 
 ## Explain how prototypal inheritance works in JavaScript
 
@@ -177,7 +173,7 @@ dependency graph, allowing you to only the static content which your users need
 when accessing a part of your site. This makes a lot of sense when dealing with
 SPA's.
 
-## Explain why the following doesn't work as an IIFE: `function foo() { }();
+## Explain why the following doesn't work as an IIFE: `function foo() { }();`
 
 This doesn't work because it is actually invalid syntax. In order to evaluate
 something in JavaScript it is true that we do put `()`'s after it. However, in
@@ -186,8 +182,7 @@ parenthesis and this causes a syntax error. Since the JavaScript compiler has to
 evaluate a function before it can execute it you need to put parenthesis around
 the function in order to turn it into an IIFE.
 
-## What's the difference between a variable that is `null`, `undefined`, or
-`undeclared`?
+## What's the difference between a variable that is `null`, `undefined`, or `undeclared`?
 
 TODO: variable declaration and definition? Need to remember the correct terms
 
@@ -300,8 +295,7 @@ This is probably better than anything I can write:
 
 [Stack Overflow](http://stackoverflow.com/questions/7614317/what-is-the-difference-between-native-objects-and-host-objects)
 
-## What is the difference between `function Person(){}`, `var person =
-Person();` and `var person = new Person()`?
+## What is the difference between `function Person(){}`, `var person = Person();` and `var person = new Person()`?
 
 `function Person(){}` is referred to as a *function declaration*. In this case,
 it actually serves as a constructor for the Person object or class. When you are
@@ -427,6 +421,7 @@ other external sources being loaded.
 ```javascript
 [1, 2, 3, 4, 5].duplicate();
 
+// My initial, stupid attempt
 Array.prototype.duplicate = function() {
   var arr = this.slice(0);
 
@@ -436,6 +431,11 @@ Array.prototype.duplicate = function() {
 
   return arr;
 }
+
+// Easy way
+Array.prototype.duplicate = function() {
+  return this.concat(this);
+};
 ```
 
 Feel free to come up with a better way!
@@ -446,7 +446,6 @@ A ternary expression uses a ternary operator. A ternary operator means that it
 takes three arguments (although in some language implementations this becomes a
 conditional expression).
 
-## What is `'use strict';`? What are the advantages and disadvantages for using
-it?
+## What is `'use strict';`? What are the advantages and disadvantages for using it?
 
 [Lol Stack Overflow](http://stackoverflow.com/questions/1335851/what-does-use-strict-do-in-javascript-and-what-is-the-reasoning-behind-it)
